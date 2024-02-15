@@ -43,6 +43,10 @@ jobs:
         uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81
         with:
           images: ${{ env.REGISTRY }}/${{ env.CONTROLLER_IMAGE_NAME }}
+          tags: |
+            type=semver,pattern=v{{version}}
+            type=semver,pattern=v{{major}}.{{minor}}.x
+            stable
 
       - name: Build and push controller docker image
         uses: docker/build-push-action@v5.1.0

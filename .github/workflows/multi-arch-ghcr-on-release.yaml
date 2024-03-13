@@ -44,7 +44,7 @@ jobs:
         run: |
           releaseBranchFormat='release-v'
           if [[ ${{ github.ref_name }}==${releaseBranchFormat}* ]]; then
-            echo "version=${{ github.ref_name }}#*-" >> $GITHUB_OUTPUT
+            echo "version=${${{ github.ref_name }}#*-}" >> $GITHUB_OUTPUT
           else
             echo "version=stable" >> $GITHUB_OUTPUT
           fi

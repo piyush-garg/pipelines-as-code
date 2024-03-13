@@ -29,6 +29,7 @@ func UserInOwnerFile(ownerContent, sender string) (bool, error) {
 			return true, nil
 		}
 	}
+
 	return false, nil
 }
 

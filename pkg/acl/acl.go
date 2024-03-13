@@ -19,6 +19,7 @@ type ownersConfig struct {
 // Does not support OWNERS_ALIASES.
 func UserInOwnerFile(ownerContent, sender string) (bool, error) {
 	oc := ownersConfig{}
+	
 	err := yaml.Unmarshal([]byte(ownerContent), &oc)
 	if err != nil {
 		return false, err
